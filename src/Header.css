@@ -1,3 +1,14 @@
-*{
-    
+.header__logo{
+    object-fit: contain;
+    height: 60px;
+  
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 100;
+    border-bottom: 1px solid lightgrey;
+    padding: 5px;
 }
