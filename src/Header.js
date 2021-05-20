@@ -6,7 +6,7 @@ function Header() {
     return (
         <div className="header">
         
-            <PersonIcon/>
+            <PersonIcon fontSize="large" className="header__personIcon" />
             
         </div>
     )
