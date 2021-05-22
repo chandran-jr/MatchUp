@@ -10,3 +10,13 @@
     background-size: cover;
     background-position: center;
 }
+
+.tindercards__cards{
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.swipe{
+    position: absolute;
+}
