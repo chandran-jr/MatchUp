@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './TinderCards.css';
-import TinderCard from './TinderCard.js'
+import TinderCard from 'react-tinder-card';
 
 function TinderCards() {
 
@@ -60,14 +60,36 @@ function TinderCards() {
         
     ]);
 
+    const [lastDirection, setLastDirection] = useState();
+
+    const swiped = (direction,nameToDelete) => {
+        setLastDirection(direction);
+    }
+
+    const outOfFrame = (nameToDelete) => {
+    }
+
     return (
         <div className="tindercards">
             <div className="tindercards__cards">
             {people.map((person) => (
                 <TinderCard
-                    name={person.name}
-                    url={person.url}
-                    />
+                    className="swipe"
+                    key={person.name}
+                    preventSwipe={["up", "down"]}
+                    onSwipe={(dir) => swiped(dir, person.name)}
+                    onCardLeftScreen={() => outOfFrame(person.name)}
+                    >
+
+                        <div 
+                            style={{ backgroundImage: `url(${person.url})`}}
+                            className="tindercards__card">
+
+                            <h3>{person.name}</h3>
+
+                            </div>
+
+                    </TinderCard>
             ))}
             </div>
         </div>
