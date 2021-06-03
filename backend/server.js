@@ -37,7 +37,7 @@ app.post('/tinder/card', (req, res) => {
             res.status(201).send(data);
         }
     })
-});
+})
 
 app.get('/tinder/card', (req, res) => {
 
